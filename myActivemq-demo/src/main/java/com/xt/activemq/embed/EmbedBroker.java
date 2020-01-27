@@ -3,9 +3,7 @@ package com.xt.activemq.embed;
 import org.apache.activemq.broker.BrokerService;
 
 /**
- * @author xt
- * @create 2019/12/7 12:13
- * @Desc
+ * broker: activemq服务器实例
  */
 public class EmbedBroker {
     public static void main(String[] args) throws Exception {

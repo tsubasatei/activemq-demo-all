@@ -9,13 +9,24 @@ import java.io.IOException;
  * 消费者
  */
 public class JmsConsumer {
-    public static final String ACTIVEMQ_URL = "nio://192.168.239.13:61608";
+
+
+    /**
+     * 1. client使用failover协议来与有效的master交互
+     * 2. master地址在前，slavew 在后，randomize 为 false让 Client优先与master通信
+     * 3. 如果 master 失效，failover协议将会尝试与slave建立链接，并依此重试
+     */
+//    public static final String ACTIVEMQ_URL = "failover:(tcp://192.168.239.13:61616,tcp://192.168.239.13:61617,tcp://192.168.239.13:61618)?randomize=false";
+    public static final String ACTIVEMQ_URL = "tcp://192.168.239.13:61616";
+//    public static final String ACTIVEMQ_URL = "nio://192.168.239.13:61618";
+//    public static final String ACTIVEMQ_URL = "nio://192.168.239.13:61608";
 //    public static final String ACTIVEMQ_URL = "tcp://localhost:61616";
-    public static final String QUEUE_NAME = "transport";
+
+    public static final String QUEUE_NAME = "queue-cluster";
 
     public static void main(String[] args) throws JMSException, IOException {
 
-        System.out.println("*** 我是 2 号消费者");
+        System.out.println("*** 我是 1 号消费者");
 
         // 1. 创建连接工厂 ActiveMQConnectionFactory, 采用默认的用户名和密码
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL);

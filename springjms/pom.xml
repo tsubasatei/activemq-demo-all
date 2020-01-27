@@ -5,16 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xt.demo</groupId>
-    <artifactId>springjms</artifactId>
+    <artifactId>myActivemq-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
         <spring.version>4.3.23.RELEASE</spring.version>
-        <activemq.version>5.15.10</activemq.version>
-        <xben.version>3.16</xben.version>
     </properties>
 
     <dependencies>
@@ -22,33 +18,12 @@
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-all</artifactId>
-            <version>${activemq.version}</version>
+            <version>5.15.9</version>
         </dependency>
         <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-spring</artifactId>
-            <version>${xben.version}</version>
-        </dependency>
-        <!-- 下面是 junit/log4j 等基础通用配置 -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.18</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>3.16</version>
         </dependency>
 
         <!-- Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.databind.ObjectMapper-->
@@ -68,7 +43,7 @@
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-pool</artifactId>
-            <version>${activemq.version}</version>
+            <version>5.15.11</version>
         </dependency>
         <!-- Spring-AOP 等相关 Jar -->
         <dependency>
@@ -105,6 +80,28 @@
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
             <version>2.1_2</version>
+        </dependency>
+
+        <!-- 下面是 junit/log4j 等基础通用配置 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
         </dependency>
     </dependencies>
 </project>

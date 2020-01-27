@@ -49,7 +49,7 @@ public class JmsConsumer_TX {
 
 
         messageConsumer.close();
-//        session.commit();
+        session.commit();
         session.close();
         connection.close();
     }

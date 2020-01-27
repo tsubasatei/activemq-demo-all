@@ -1,12 +1,11 @@
 server:
-  port: 5566
+  port: 5555   # 启动第2个消费者的时候改为5555端口号
 spring:
   activemq:
-    broker-url: tcp://192.168.239.13:61616 # \u81EA\u5DF1\u7684 MQ \u670D\u52A1\u5668\u5730\u5740
+    broker-url: tcp://192.168.239.13:61616
     user: admin
     password: admin
   jms:
-    pub-sub-domain: true  # false: queue, true: topic\uFF0C \u9ED8\u8BA4 false
+    pub-sub-domain: true
 
-#  \u81EA\u5DF1\u5B9A\u4E49\u961F\u5217\u540D\u79F0
 myTopic: boot-activemq-topic

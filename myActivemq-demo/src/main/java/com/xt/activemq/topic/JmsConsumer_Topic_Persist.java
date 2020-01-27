@@ -3,7 +3,6 @@ package com.xt.activemq.topic;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
-import java.io.IOException;
 
 /**
  * 主题持久化：
@@ -13,9 +12,9 @@ import java.io.IOException;
  */
 public class JmsConsumer_Topic_Persist {
     public static final String ACTIVEMQ_URL = "tcp://192.168.239.13:61616";
-    public static final String TOPIC_NAME = "topic-persist";
+    public static final String TOPIC_NAME = "jdbc01-topic-persist";
 
-    public static void main(String[] args) throws JMSException, IOException {
+    public static void main(String[] args) throws JMSException {
 
         System.out.println("*** z4");
 

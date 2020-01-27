@@ -10,7 +10,7 @@ import javax.jms.*;
 public class JmsProducer_Topic_Persist {
 
     public static final String ACTIVEMQ_URL = "tcp://192.168.239.13:61616";
-    public static final String TOPIC_NAME = "topic-persist";
+    public static final String TOPIC_NAME = "jdbc01-topic-persist";
 
     public static void main(String[] args) throws JMSException {
         // 1. 创建连接工厂 ActiveMQConnectionFactory, 采用默认的用户名和密码

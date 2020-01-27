@@ -9,9 +9,12 @@ import javax.jms.*;
  */
 public class JmsProducer {
 
-    public static final String ACTIVEMQ_URL = "nio://192.168.239.13:61608";
+    public static final String ACTIVEMQ_URL = "failover:(tcp://192.168.239.13:61616,tcp://192.168.239.13:61617,tcp://192.168.239.13:61618)?randomize=false";
+//    public static final String ACTIVEMQ_URL = "tcp://192.168.239.13:61616";
+//    public static final String ACTIVEMQ_URL = "nio://192.168.239.13:61618";
+//    public static final String ACTIVEMQ_URL = "nio://192.168.239.13:61608";
 //    public static final String ACTIVEMQ_URL = "tcp://localhost:61616";
-    public static final String QUEUE_NAME = "transport";
+    public static final String QUEUE_NAME = "queue-cluster";
 
     public static void main(String[] args) throws JMSException {
         // 1. 创建连接工厂 ActiveMQConnectionFactory, 采用默认的用户名和密码
@@ -32,14 +35,14 @@ public class JmsProducer {
         // 4. 创建目的地（具体是队列还是主题 topic）
         Queue queue = session.createQueue(QUEUE_NAME);
 
-        // 5. 创建消息的生产者
+        // 5. 创建消息的生产者7
         MessageProducer messageProducer = session.createProducer(queue);
 
         // 非持久化
 //        messageProducer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
 
         // 持久化
-//        messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT);
+        messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT);
 
         // 6. 通过使用 messageProducer 生产3条消息发送到 MQ 的队列里面
         for (int i = 1; i <=3 ; i++) {
